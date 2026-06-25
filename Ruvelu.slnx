@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/backend/">
     <Project Path="backend/Ruvelu.API/Ruvelu.API.csproj" />
+    <Project Path="backend/Ruvelu.Core/Ruvelu.Core.csproj" />
+    <Project Path="backend/Ruvelu.Data/Ruvelu.Data.csproj" />
   </Folder>
 </Solution>
