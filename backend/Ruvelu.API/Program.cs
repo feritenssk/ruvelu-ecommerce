@@ -3,7 +3,7 @@ using Ruvelu.Core.Interfaces;
 using Ruvelu.Data;
 using Ruvelu.Data.Repositories;
 
-var builder = webApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
