@@ -35,7 +35,7 @@ namespace Ruvelu.API.Controllers
             var product = await _productRepository.GetByIdAsync(id);
             if (product == null)
             {
-                return NotFound();
+                return NotFound(new { message = "Ürün Bulunamadı." });
             }
             return Ok(product);
         }
