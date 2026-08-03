@@ -59,6 +59,18 @@ namespace Ruvelu.API.Controllers
         return NoContent();
             
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var product = await _productRepository.GetByIdAsync(id);
+            if(product==null)
+            {
+                return NotFound(new{message="Ürün Bulunamadı."});
+            }
+            await _productRepository.DeleteAsync(id);
+            return NoContent();
+        }
 }
 
 }
