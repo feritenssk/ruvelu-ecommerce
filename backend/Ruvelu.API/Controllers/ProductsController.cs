@@ -39,6 +39,26 @@ namespace Ruvelu.API.Controllers
             }
             return Ok(product);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult>  Update(int id, Product product) 
+        {
+            var existingProduct = await _productRepository.GetByIdAsync(id);
+            if(existingProduct==null)
+            {
+                return NotFound(new {message="Ürün Bulunamadı."});
+            }
+        existingProduct.Name = product.Name;
+        existingProduct.Description = product.Description;
+        existingProduct.Price = product.Price;
+        existingProduct.Stock = product.Stock;
+        existingProduct.ImageUrl = product.ImageUrl;
+        
+        await _productRepository.UpdateAsync(existingProduct);
+
+        return NoContent();
+            
+        }
 }
 
 }
