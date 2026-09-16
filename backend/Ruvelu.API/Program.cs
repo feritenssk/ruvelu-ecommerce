@@ -12,6 +12,7 @@ builder.Services.AddDbContext<RuveluDbContext>(options =>
  options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
  builder.Services.AddScoped<IProductRepository, ProductRepository>();
+ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
  var app = builder.Build();
 
